@@ -1,0 +1,540 @@
+@charset "UTF-8";
+
+/* ==========================
+   ROOT COLORS
+========================== */
+
+:root{
+
+	--bg-dark:#020617;
+	--bg-second:#0F172A;
+	--bg-third:#111827;
+	--bg-soft:#1E293B;
+
+	--primary:#2563EB;
+	--secondary:#4F46E5;
+	--accent:#38BDF8;
+
+	--success:#10B981;
+	--danger:#EF4444;
+
+	--text:#F8FAFC;
+	--light:#CBD5E1;
+	--muted:#94A3B8;
+
+	--glass:
+	rgba(255,255,255,.06);
+
+	--border:
+	rgba(255,255,255,.08);
+}
+
+/* ==========================
+   GLOBAL
+========================== */
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+	background:
+	radial-gradient(
+	circle at top left,
+	rgba(37,99,235,.12),
+	transparent 30%),
+
+	radial-gradient(
+	circle at bottom right,
+	rgba(79,70,229,.12),
+	transparent 30%),
+
+	linear-gradient(
+	135deg,
+	#020617,
+	#0F172A,
+	#111827,
+	#1E293B);
+
+	background-size:400% 400%;
+
+	animation:
+	gradientMove 16s
+	ease infinite;
+
+	min-height:100vh;
+
+	color:var(--text);
+	overflow-x:hidden;
+}
+
+/* ==========================
+   ANIMATION
+========================== */
+
+@keyframes gradientMove{
+
+	0%{
+		background-position:
+		0% 50%;
+	}
+
+	50%{
+		background-position:
+		100% 50%;
+	}
+
+	100%{
+		background-position:
+		0% 50%;
+	}
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+
+	padding:22px 8%;
+
+	background:
+	rgba(2,6,23,.88);
+
+	backdrop-filter:
+	blur(22px);
+
+	border-bottom:
+	1px solid
+	rgba(255,255,255,.08);
+
+	position:sticky;
+	top:0;
+
+	z-index:1000;
+}
+
+.nav-logo{
+
+	margin:0;
+
+	font-size:30px;
+	font-weight:800;
+
+	color:white;
+
+	letter-spacing:.5px;
+
+	cursor:pointer;
+
+	transition:.3s ease;
+}
+
+.nav-logo span{
+
+	color:#7C3AED;
+}
+
+.nav-logo:hover{
+
+	transform:scale(1.03);
+}
+
+.nav-links{
+
+	display:flex;
+	gap:18px;
+}
+
+.nav-links a{
+
+	text-decoration:none;
+
+	color:var(--light);
+
+	padding:12px 20px;
+
+	border-radius:12px;
+
+	font-weight:500;
+
+	transition:.3s;
+}
+
+.nav-links a:hover{
+
+	background:
+	rgba(255,255,255,.08);
+
+	color:
+	var(--accent);
+
+	transform:
+	translateY(-2px);
+}
+
+/* ==========================
+   PAGE HEADER
+========================== */
+
+.page-header{
+
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+
+	padding:50px 8% 30px;
+}
+
+.page-header h1{
+
+	font-size:52px;
+	font-weight:800;
+
+	color:white;
+}
+
+.page-header p{
+
+	margin-top:10px;
+
+	font-size:17px;
+
+	color:var(--muted);
+}
+
+/* ==========================
+   DASHBOARD BUTTON
+========================== */
+
+.dashboard-btn{
+
+	text-decoration:none;
+
+	background:
+	linear-gradient(
+	135deg,
+	#2563EB,
+	#4F46E5);
+
+	color:white;
+
+	padding:16px 30px;
+
+	border-radius:16px;
+
+	font-weight:700;
+
+	box-shadow:
+	0 12px 30px
+	rgba(37,99,235,.25);
+
+	transition:.3s;
+}
+
+.dashboard-btn:hover{
+
+	transform:
+	translateY(-4px);
+
+	box-shadow:
+	0 15px 35px
+	rgba(79,70,229,.35);
+}
+
+/* ==========================
+   STATS SECTION
+========================== */
+
+.stats-section{
+
+	display:flex;
+
+	gap:22px;
+
+	padding:0 8%;
+
+	margin-bottom:40px;
+
+	flex-wrap:wrap;
+}
+
+.stat-card{
+
+	background:
+	var(--glass);
+
+	backdrop-filter:
+	blur(20px);
+
+	border:
+	1px solid
+	var(--border);
+
+	border-radius:28px;
+
+	padding:30px;
+
+	min-width:250px;
+
+	box-shadow:
+	0 10px 30px
+	rgba(0,0,0,.20);
+}
+
+.stat-card h2{
+
+	font-size:40px;
+
+	color:
+	var(--accent);
+
+	margin-bottom:10px;
+}
+
+.stat-card p{
+
+	color:
+	var(--light);
+}
+
+/* ==========================
+   JOBS GRID
+========================== */
+
+.jobs-container{
+
+	padding:0 8% 60px;
+
+	display:grid;
+
+	grid-template-columns:
+	repeat(auto-fit,
+	minmax(360px,1fr));
+
+	gap:30px;
+}
+
+/* ==========================
+   JOB CARD
+========================== */
+
+.job-card{
+
+	background:
+	var(--glass);
+
+	backdrop-filter:
+	blur(20px);
+
+	border:
+	1px solid
+	var(--border);
+
+	border-radius:30px;
+
+	padding:28px;
+
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+
+	box-shadow:
+	0 15px 40px
+	rgba(0,0,0,.22);
+
+	transition:.35s;
+}
+
+.job-card:hover{
+
+	transform:
+	translateY(-8px);
+
+	border:
+	1px solid
+	rgba(56,189,248,.20);
+
+	box-shadow:
+	0 20px 45px
+	rgba(56,189,248,.12);
+}
+
+/* ==========================
+   JOB TOP
+========================== */
+
+.job-top{
+
+	display:flex;
+	justify-content:space-between;
+	align-items:flex-start;
+
+	margin-bottom:20px;
+}
+
+.job-top h2{
+
+	font-size:30px;
+	color:white;
+}
+
+.company{
+
+	color:var(--muted);
+
+	font-size:15px;
+
+	margin-top:8px;
+}
+
+/* ==========================
+   STATUS
+========================== */
+
+.status{
+
+	background:
+	rgba(16,185,129,.12);
+
+	color:
+	#10B981;
+
+	border:
+	1px solid
+	rgba(16,185,129,.25);
+
+	padding:
+	10px 18px;
+
+	border-radius:40px;
+
+	font-size:14px;
+	font-weight:700;
+}
+
+/* ==========================
+   JOB INFO
+========================== */
+
+.job-info{
+
+	flex-grow:1;
+}
+
+.job-info p{
+
+	line-height:1.9;
+
+	margin-bottom:14px;
+
+	color:#E2E8F0;
+
+	word-break:break-word;
+}
+
+.job-info span{
+
+	color:
+	var(--accent);
+
+	font-weight:700;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.job-footer{
+
+	display:flex;
+	gap:15px;
+
+	margin-top:25px;
+}
+
+.job-footer form{
+
+	flex:1;
+}
+
+.edit-btn,
+.delete-btn{
+
+	width:100%;
+
+	border:none;
+
+	cursor:pointer;
+
+	padding:15px;
+
+	border-radius:14px;
+
+	font-size:15px;
+	font-weight:700;
+
+	transition:.3s;
+}
+
+.edit-btn{
+
+	background:
+	linear-gradient(
+	135deg,
+	#2563EB,
+	#4F46E5);
+
+	color:white;
+}
+
+.delete-btn{
+
+	background:
+	linear-gradient(
+	135deg,
+	#EF4444,
+	#DC2626);
+
+	color:white;
+}
+
+.edit-btn:hover,
+.delete-btn:hover{
+
+	transform:
+	translateY(-3px);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+	.page-header{
+
+		flex-direction:column;
+		text-align:center;
+
+		gap:20px;
+	}
+
+	.stats-section{
+
+		flex-direction:column;
+	}
+
+	.job-footer{
+
+		flex-direction:column;
+	}
+}

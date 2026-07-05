@@ -1,0 +1,481 @@
+@charset "ISO-8859-1";
+
+/* =========================
+   ROOT COLORS
+========================= */
+
+:root{
+
+	--bg-dark:#0B1120;
+	--bg-second:#111827;
+	--bg-third:#1E293B;
+
+	--primary:#2563EB;
+	--secondary:#4F46E5;
+	--accent:#38BDF8;
+
+	--success:#10B981;
+	--danger:#EF4444;
+
+	--text:#F8FAFC;
+	--light:#CBD5E1;
+	--muted:#94A3B8;
+
+	--glass:rgba(255,255,255,.06);
+	--border:rgba(255,255,255,.08);
+
+	--shadow:rgba(0,0,0,.35);
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	font-family:'Segoe UI',sans-serif;
+}
+
+html{
+	scroll-behavior:smooth;
+}
+
+body{
+
+	background:
+	radial-gradient(
+	circle at top left,
+	rgba(37,99,235,.12),
+	transparent 30%),
+
+	radial-gradient(
+	circle at bottom right,
+	rgba(79,70,229,.12),
+	transparent 30%),
+
+	linear-gradient(
+	135deg,
+	#020617,
+	#0F172A,
+	#111827,
+	#1E293B);
+
+	background-size:400% 400%;
+
+	animation:
+	gradientMove 16s ease infinite;
+
+	color:var(--text);
+
+	min-height:100vh;
+
+	overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND ANIMATION
+========================= */
+
+@keyframes gradientMove{
+
+	0%{
+		background-position:0% 50%;
+	}
+
+	50%{
+		background-position:100% 50%;
+	}
+
+	100%{
+		background-position:0% 50%;
+	}
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+
+	padding:22px 8%;
+
+	position:sticky;
+	top:0;
+
+	z-index:1000;
+
+	background:
+	rgba(2,6,23,.88);
+
+	backdrop-filter:
+	blur(22px);
+
+	border-bottom:
+	1px solid rgba(255,255,255,.06);
+
+	box-shadow:
+	0 8px 35px rgba(0,0,0,.25);
+}
+
+.logo{
+
+	font-size:30px;
+	font-weight:800;
+	color:white;
+	letter-spacing:.5px;
+}
+
+.logo span{
+	color:#7C3AED;
+}
+
+.nav-links{
+	display:flex;
+	gap:18px;
+}
+
+.nav-links a{
+
+	text-decoration:none;
+
+	color:var(--light);
+
+	font-size:16px;
+
+	padding:12px 22px;
+
+	border-radius:12px;
+
+	font-weight:500;
+
+	transition:.3s;
+}
+
+.nav-links a:hover{
+
+	background:
+	rgba(255,255,255,.06);
+
+	color:var(--accent);
+
+	transform:
+	translateY(-2px);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+	text-align:center;
+
+	padding:60px 20px;
+}
+
+.header h1{
+
+	font-size:46px;
+
+	color:white;
+
+	margin-bottom:12px;
+
+	font-weight:800;
+}
+
+.header p{
+
+	color:var(--muted);
+
+	font-size:18px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+	width:90%;
+	max-width:1300px;
+
+	margin:auto;
+
+	padding-bottom:60px;
+}
+
+/* =========================
+   APPLICANTS GRID
+========================= */
+
+.applicants-grid{
+
+	display:grid;
+
+	grid-template-columns:
+	repeat(auto-fit,minmax(320px,1fr));
+
+	gap:30px;
+}
+
+/* =========================
+   APPLICANT CARD
+========================= */
+
+.applicant-card{
+
+	background:
+	linear-gradient(
+	145deg,
+	rgba(255,255,255,.08),
+	rgba(255,255,255,.04));
+
+	backdrop-filter:
+	blur(25px);
+
+	border:
+	1px solid rgba(255,255,255,.08);
+
+	border-radius:24px;
+
+	padding:28px;
+
+	box-shadow:
+	0 20px 60px rgba(0,0,0,.25);
+
+	transition:.3s ease;
+}
+
+.applicant-card:hover{
+
+	transform:
+	translateY(-8px);
+
+	border:
+	1px solid rgba(56,189,248,.20);
+
+	box-shadow:
+	0 25px 60px rgba(37,99,235,.20);
+}
+
+.applicant-card h2{
+
+	color:white;
+
+	margin-bottom:18px;
+
+	font-size:26px;
+}
+
+.applicant-card p{
+
+	color:var(--light);
+
+	margin-bottom:12px;
+
+	line-height:1.7;
+}
+
+.applicant-card strong{
+	color:white;
+}
+
+/* =========================
+   BUTTON GROUP
+========================= */
+
+.btn-group{
+
+	display:flex;
+
+	gap:12px;
+
+	margin-top:20px;
+}
+
+/* =========================
+   SELECT BUTTON
+========================= */
+
+.select-btn{
+
+	border:none;
+
+	background:
+	linear-gradient(
+	135deg,
+	#10B981,
+	#059669);
+
+	color:white;
+
+	padding:12px 24px;
+
+	border-radius:12px;
+
+	cursor:pointer;
+
+	font-size:15px;
+
+	font-weight:700;
+
+	transition:.3s ease;
+}
+
+.select-btn:hover{
+
+	transform:
+	translateY(-3px);
+
+	box-shadow:
+	0 12px 25px rgba(16,185,129,.35);
+}
+
+/* =========================
+   REJECT BUTTON
+========================= */
+
+.reject-btn{
+
+	border:none;
+
+	background:
+	linear-gradient(
+	135deg,
+	#EF4444,
+	#DC2626);
+
+	color:white;
+
+	padding:12px 24px;
+
+	border-radius:12px;
+
+	cursor:pointer;
+
+	font-size:15px;
+
+	font-weight:700;
+
+	transition:.3s ease;
+}
+
+.reject-btn:hover{
+
+	transform:
+	translateY(-3px);
+
+	box-shadow:
+	0 12px 25px rgba(239,68,68,.35);
+}
+
+/* =========================
+   EMPTY CARD
+========================= */
+
+.empty-card{
+
+	background:
+	linear-gradient(
+	145deg,
+	rgba(255,255,255,.08),
+	rgba(255,255,255,.04));
+
+	backdrop-filter:
+	blur(20px);
+
+	border:
+	1px solid rgba(255,255,255,.08);
+
+	border-radius:24px;
+
+	padding:60px;
+
+	text-align:center;
+
+	box-shadow:
+	0 20px 60px rgba(0,0,0,.25);
+}
+
+.empty-card h2{
+
+	color:var(--accent);
+
+	font-size:30px;
+
+	margin-bottom:15px;
+}
+
+.empty-card p{
+
+	color:var(--muted);
+
+	font-size:17px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+	from{
+
+		opacity:0;
+
+		transform:
+		translateY(40px);
+	}
+
+	to{
+
+		opacity:1;
+
+		transform:
+		translateY(0);
+	}
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+	.navbar{
+
+		flex-direction:column;
+
+		gap:15px;
+	}
+
+	.nav-links{
+
+		flex-wrap:wrap;
+
+		justify-content:center;
+	}
+
+	.header h1{
+
+		font-size:34px;
+	}
+
+	.btn-group{
+
+		flex-direction:column;
+	}
+
+	.select-btn,
+	.reject-btn{
+
+		width:100%;
+	}
+}
